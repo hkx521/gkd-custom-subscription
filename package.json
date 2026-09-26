@@ -1,0 +1,13 @@
+{
+  "name": "gkd-custom-subscription",
+  "version": "1.0.0",
+  "description": "Custom lightweight GKD subscription filtered strictly for open-screen ads",
+  "main": "scripts/build.mjs",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "json5": "^2.2.3"
+  }
+}
