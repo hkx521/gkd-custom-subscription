@@ -1,7 +1,7 @@
 {
   "id": 521,
   "name": "极简开屏专精订阅 (A 选项)",
-  "version": 1790549227,
+  "version": 1790640595,
   "author": "hkx521",
   "description": "自动由 GitHub Actions 每日从优质上游提纯，仅保留白名单 App 与全局开屏广告，0 后台监听，极致省电。",
   "supportUri": "https://github.com/hkx521/gkd-custom-subscription",
