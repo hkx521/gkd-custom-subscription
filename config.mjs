@@ -1,4 +1,65 @@
 /**
+ * 上游订阅源列表 —— 数组顺序即优先级（去重时靠前的源胜出）。
+ * url 必须是可直接 JSON5 解析的完整订阅文件（dist/*.json5 或 *.json）。
+ */
+export const sources = [
+  {
+    name: 'Lin-arm/GKD_subscription',
+    url: 'https://raw.githubusercontent.com/Lin-arm/GKD_subscription/main/dist/gkd.json5',
+  },
+  {
+    name: 'ganlinte/GKD-subscription',
+    url: 'https://raw.githubusercontent.com/ganlinte/GKD-subscription/main/dist/ganlin_gkd.json5',
+  },
+  {
+    name: 'AIsouler/GKD_subscription',
+    url: 'https://raw.githubusercontent.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.json5',
+  },
+  {
+    name: 'YaChengMu/gkd_subscription_min',
+    url: 'https://raw.githubusercontent.com/YaChengMu/gkd_subscription_min/main/dist/gkd.json5',
+  },
+  {
+    name: 'VolcanoSAhrimp/gkd-rule',
+    url: 'https://raw.githubusercontent.com/VolcanoSAhrimp/gkd-rule/main/dist/gkd.json5',
+  },
+  {
+    name: 'mrlctate/gkd-mrlc',
+    url: 'https://raw.githubusercontent.com/mrlctate/gkd-mrlc/main/dist/gkd.json5',
+  },
+  {
+    name: 'AIsouler/gkd-subscription',
+    url: 'https://raw.githubusercontent.com/AIsouler/gkd-subscription/main/dist/gkd.json5',
+  },
+  {
+    name: 'MengNianxiaoyao/gkd-subscription',
+    url: 'https://raw.githubusercontent.com/MengNianxiaoyao/gkd-subscription/main/dist/gkd.json5',
+  },
+  {
+    name: 'gkd-kit/subscription',
+    url: 'https://raw.githubusercontent.com/gkd-kit/subscription/main/dist/gkd.json5',
+  },
+];
+
+/**
+ * 组保留策略（作用于全局组与白名单 App 的专项组）
+ * - include: RegExp[]，空 = 不做类别限制、全部保留；非空 = 组名命中其一才保留
+ * - exclude: RegExp[]，命中即剔除（优先级高于 include）
+ * - globalGroupsPerCategory: 每个场景类别最多保留几个"规则不重复"的全局组。
+ *   各源的全局组高度重合，堆太多会让同一次启动重复查询多套规则。
+ *
+ * 想退回"只提纯开屏"：
+ *   include: [/开屏/],
+ *   exclude: [/(连代理|误触|会员|协议|提示)/],
+ *   globalGroupsPerCategory: 3
+ */
+export const groupPolicy = {
+  include: [],
+  exclude: [],
+  globalGroupsPerCategory: 2,
+};
+
+/**
  * 白名单 App 包名配置
  * 仅保留你手机上安装且可能存在开屏广告的目标应用
  */

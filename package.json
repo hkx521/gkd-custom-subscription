@@ -5,7 +5,8 @@
   "main": "scripts/build.mjs",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs && node scripts/verify.mjs",
+    "verify": "node scripts/verify.mjs"
   },
   "devDependencies": {
     "json5": "^2.2.3"
