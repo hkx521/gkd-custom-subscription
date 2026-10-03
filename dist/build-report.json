@@ -9,7 +9,7 @@
     {
       "name": "Lin-arm/GKD_subscription",
       "ok": true,
-      "upstreamVersion": 601,
+      "upstreamVersion": 602,
       "kb": 1205
     },
     {
@@ -62,7 +62,7 @@
     }
   ],
   "merged": {
-    "phantomDisableEntriesDropped": 1955,
+    "phantomDisableEntriesDropped": 1956,
     "globalGroupsByCategory": {
       "开屏": 2,
       "更新提示": 2,
