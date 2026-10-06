@@ -9,8 +9,8 @@
     {
       "name": "Lin-arm/GKD_subscription",
       "ok": true,
-      "upstreamVersion": 603,
-      "kb": 1205
+      "upstreamVersion": 604,
+      "kb": 1206
     },
     {
       "name": "ganlinte/GKD-subscription",
