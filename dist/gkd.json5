@@ -5,7 +5,7 @@
   description: 'GitHub Actions 每日从多个社区订阅源合并去重：保留全部全局规则组 + 白名单 App 的全部专项规则组（筛选策略见 config.mjs 的 groupPolicy）。',
   supportUri: 'https://github.com/hkx521/gkd-custom-subscription',
   checkUpdateUrl: 'https://raw.githubusercontent.com/hkx521/gkd-custom-subscription/main/dist/gkd.version.json5',
-  version: 1790897990,
+  version: 1790897991,
   globalGroups: [
     {
       key: 0,
@@ -12545,7 +12545,10 @@
           name: '局部广告-直播间右下角浮窗',
           desc: '点击x掉',
           fastQuery: true,
-          activityIds: '.live.LivePlayActivity',
+          activityIds: [
+            '.live.LivePlayActivity',
+            '.detail.ui.DetailActivity',
+          ],
           rules: [
             {
               key: 1000516,
@@ -12560,9 +12563,12 @@
             },
             {
               key: 1000517,
-              name: '打开游戏',
-              matches: '@[visibleToUser=true] <3 [childCount=5] >5 [text="打开游戏"]',
-              snapshotUrls: 'https://i.gkd.li/i/30297510',
+              name: '打开游戏/下载',
+              matches: '@[visibleToUser=true][width<114 && height<114][top=parent.top] <3 [childCount>4] >5 [text="打开游戏" || text="下载"]',
+              snapshotUrls: [
+                'https://i.gkd.li/i/30297510',
+                'https://i.gkd.li/i/33388572',
+              ],
             },
             {
               key: 1000518,
