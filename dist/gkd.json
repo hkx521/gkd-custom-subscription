@@ -5,7 +5,7 @@
   "description": "GitHub Actions 每日从多个社区订阅源合并去重：保留全部全局规则组 + 白名单 App 的全部专项规则组（筛选策略见 config.mjs 的 groupPolicy）。",
   "supportUri": "https://github.com/hkx521/gkd-custom-subscription",
   "checkUpdateUrl": "https://raw.githubusercontent.com/hkx521/gkd-custom-subscription/main/dist/gkd.version.json5",
-  "version": 1790897995,
+  "version": 1790897996,
   "globalGroups": [
     {
       "key": 0,
@@ -9311,7 +9311,7 @@
               "key": 1000378,
               "activityIds": "com.tencent.upgrade.ui.UpgradeDialogActivity",
               "matches": "[vid=\"upgrade_dialog_close_btn\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13116821"
+              "snapshotUrls": "https://i.gkd.li/i/33833374"
             }
           ]
         },
