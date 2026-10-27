@@ -5,7 +5,7 @@
   "description": "GitHub Actions 每日从多个社区订阅源合并去重：保留全部全局规则组 + 白名单 App 的全部专项规则组（筛选策略见 config.mjs 的 groupPolicy）。",
   "supportUri": "https://github.com/hkx521/gkd-custom-subscription",
   "checkUpdateUrl": "https://raw.githubusercontent.com/hkx521/gkd-custom-subscription/main/dist/gkd.version.json5",
-  "version": 1790897996,
+  "version": 1790897997,
   "globalGroups": [
     {
       "key": 0,
@@ -21255,8 +21255,11 @@
               "actionCd": 3000,
               "actionDelay": 300,
               "activityIds": "com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity",
-              "matches": "@[desc=\"关闭弹幕\"] <2 View < View < [vid=\"danmaku_input_parent\"]",
-              "snapshotUrls": "https://i.gkd.li/i/33745857",
+              "matches": "@[desc=\"关闭弹幕\" || desc=\"Disable danmu\"] <2 View < View < [vid=\"danmaku_input_parent\"]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/33745857",
+                "https://i.gkd.li/i/34027203"
+              ],
               "excludeSnapshotUrls": "https://i.gkd.li/i/33745620",
               "exampleUrls": "https://e.gkd.li/abf8fe28-1d92-4603-9463-291f8ef66b92",
               "key": 1000936

@@ -9,8 +9,8 @@
     {
       "name": "Lin-arm/GKD_subscription",
       "ok": true,
-      "upstreamVersion": 619,
-      "kb": 1221
+      "upstreamVersion": 620,
+      "kb": 1222
     },
     {
       "name": "ganlinte/GKD-subscription",
@@ -27,8 +27,8 @@
     {
       "name": "YaChengMu/gkd_subscription_min",
       "ok": true,
-      "upstreamVersion": 151,
-      "kb": 295
+      "upstreamVersion": 152,
+      "kb": 299
     },
     {
       "name": "VolcanoSAhrimp/gkd-rule",
