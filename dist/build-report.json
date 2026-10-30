@@ -9,8 +9,8 @@
     {
       "name": "Lin-arm/GKD_subscription",
       "ok": true,
-      "upstreamVersion": 621,
-      "kb": 1228
+      "upstreamVersion": 622,
+      "kb": 1231
     },
     {
       "name": "ganlinte/GKD-subscription",
@@ -51,8 +51,8 @@
     {
       "name": "MengNianxiaoyao/gkd-subscription",
       "ok": true,
-      "upstreamVersion": 78,
-      "kb": 527
+      "upstreamVersion": 79,
+      "kb": 528
     },
     {
       "name": "gkd-kit/subscription",
@@ -79,7 +79,7 @@
       "全屏广告": 151,
       "权限提示": 49,
       "通知提示": 11,
-      "开屏": 16,
+      "开屏": 17,
       "更新提示": 20,
       "功能类": 138,
       "其他": 52,
@@ -1742,18 +1742,22 @@
           },
           {
             "key": 20,
-            "name": "通知提示"
+            "name": "开屏广告"
           },
           {
             "key": 21,
-            "name": "通知提示-开启个性化"
+            "name": "通知提示"
           },
           {
             "key": 22,
-            "name": "功能类-自动查看原图"
+            "name": "通知提示-开启个性化"
           },
           {
             "key": 23,
+            "name": "功能类-自动查看原图"
+          },
+          {
+            "key": 24,
             "name": "功能类-登录授权"
           }
         ]
