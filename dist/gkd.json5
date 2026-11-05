@@ -5,7 +5,7 @@
   description: 'GitHub Actions 每日从多个社区订阅源合并去重：保留全部全局规则组 + 白名单 App 的全部专项规则组（筛选策略见 config.mjs 的 groupPolicy）。',
   supportUri: 'https://github.com/hkx521/gkd-custom-subscription',
   checkUpdateUrl: 'https://raw.githubusercontent.com/hkx521/gkd-custom-subscription/main/dist/gkd.version.json5',
-  version: 1790898000,
+  version: 1790898001,
   globalGroups: [
     {
       key: 0,
@@ -17,13 +17,13 @@
       actionMaximum: 2,
       resetMatch: 'app',
       forcedTime: 10000,
-      actionCdKey: 1001029,
-      actionMaximumKey: 1001029,
+      actionCdKey: 1001030,
+      actionMaximumKey: 1001030,
       priorityTime: 10000,
       disableIfAppGroupMatch: '开屏广告',
       rules: [
         {
-          key: 1001029,
+          key: 1001030,
           excludeMatches: '([text="Submit" || text="书签" || text="NEXT" || text="覆盖" || text*="阅读并同意" || text="跳过空白"][visibleToUser=true]) || ([text*="搜索" || text="历史记录" || text$="在搜"][text.length>3 && text.length<7][visibleToUser=true]) || ([text$="设置" || text*="跳过片"][text.length<10][visibleToUser=true]) || ([text^="选择"][text*="偏好" || text*="兴趣" || text*="喜好" || text*="行业"][text.length<10][visibleToUser=true])',
           anyMatches: [
             '[text*="跳过"][text.length<10][width<500 && height<300][visibleToUser=true]',
@@ -63,7 +63,7 @@
           ],
         },
         {
-          key: 1001030,
+          key: 1001031,
           anyMatches: [
             '@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*="第三方应用" || text*="扭动手机" || text*="点击或上滑" || text*="省钱好物" || text*="扭一扭"][visibleToUser=true]',
             'FrameLayout > FrameLayout[childCount>2][text=null][desc=null] > @View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0][visibleToUser=true]',
@@ -174,7 +174,7 @@
       disableIfAppGroupMatch: '更新提示',
       rules: [
         {
-          key: 1001031,
+          key: 1001032,
           excludeMatches: '([text*="全部"][text*="更新" || text*="忽略"][text.length<7][visibleToUser=true]) || ([text^="继续" || text^="仍然" || text*="权限"][text.length<6][visibleToUser=true]) || ([text*="来源"][visibleToUser=true])',
           matches: [
             '[text*="内测" || text*="测试版" || text*="新版" || text*="更新" || text*="升级" || text*="体验" || text*="內測" || text*="測試版" || text*="升級" || text*="體驗" || text*="Update" || text*="Upgrade" || text*="Experience"][text!*="自动" && text!*="自動" && text!*="成功" && text!*="失败" && text!*="失敗" && text!*="检查更新" && text!*="检测更新" && text!*="卸载" && name!$="EditText"][childCount=0][visibleToUser=true]',
@@ -261,7 +261,7 @@
       disableIfAppGroupMatch: '青少年模式',
       rules: [
         {
-          key: 1001032,
+          key: 1001033,
           matches: [
             '[text*="青少年" || text*="未成年" || text*="儿童"][text*="模式" || text*="守护"][text.length<15][childCount=0][visibleToUser=true]',
             '[text*="知道了" || text*="我已知晓" || text*="已满" || text*="不再提" || text="关闭"][text.length<8][childCount=0][visibleToUser=true]',
@@ -328,7 +328,7 @@
       rules: [
         {
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
-          key: 1001033,
+          key: 1001034,
         },
       ],
       apps: [
@@ -409,7 +409,7 @@
       disableIfAppGroupMatch: '青少年模式',
       rules: [
         {
-          key: 1001034,
+          key: 1001035,
           matches: [
             'TextView[text="未成年人模式" ||text*="青少年模式"]',
             'TextView[text="我知道了"||text="知道了"]',
@@ -474,7 +474,7 @@
       disableIfAppGroupMatch: '更新提示',
       rules: [
         {
-          key: 1001035,
+          key: 1001036,
           matches: [
             '[text="更新"||text="确认"||text="立即升级"||text="立即更新"||text="优先体验"||text="马上升级！"||text="立即下载"]',
             '[text="取消"||text="忽略"||text="暂不升级"||text="暂不更新"||text="下次再说"||text="以后再说"]',
@@ -586,7 +586,7 @@
       actionMaximum: 1,
       rules: [
         {
-          key: 1001036,
+          key: 1001037,
           excludeMatches: '[text^="我已阅读"||text*="协议"||text$="设置"||text^="选商品"||text*="选择"||text*="更新"||text*="新版"||desc*="新版"||text^="发送"||text*="登录"||text*="退款"||text$="应用更新"||text^="删除"||text*="清除"||text*="清空"||text*="播放"||text="浏览器打开"||text$="分享文件"||text="加入黑名单"][name!$=".CheckBox"&&name!$=".EditText"&&vid!$=".checkbox"][childCount=0][visibleToUser=true]',
           matches: [
             '[text*="通知" || text="广告" || text$="模式" || text$="签到" || text*="是否满意" || text*="喜欢" || text*="好评" || desc*="好评" || text*="评分" || text*="评价" || text*="推送" || text*="免费" || text*="立即" || text*="剪贴板" || text*="开启" || text*="定位" || text*="位置" || text*="调研" || text*="赞助" || text^="好友代取" || desc*="官网" || text*="链接" || id$="image"][childCount=0][visibleToUser=true][height>0&&width>0&&top>0&&left>0]',
@@ -654,22 +654,22 @@
       matchTime: 10000,
       forcedTime: 10000,
       resetMatch: 'activity',
-      actionCdKey: 1001037,
+      actionCdKey: 1001038,
       rules: [
         {
-          key: 1001037,
+          key: 1001038,
           name: '快手SDK-类型1',
           fastQuery: true,
           matches: 'ImageView[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0] < @ViewGroup[childCount=1][clickable=true] <<n ViewGroup >n [text="广告"][visibleToUser=true]',
         },
         {
-          key: 1001038,
+          key: 1001039,
           name: '快手SDK-类型2',
           fastQuery: true,
           matches: '[text="跳过"][name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0] < @ViewGroup[childCount=4][clickable=true] <<n ViewGroup >n [text="广告"][visibleToUser=true]',
         },
         {
-          key: 1001039,
+          key: 1001040,
           name: '快手SDK-类型3',
           fastQuery: true,
           matches: '@ImageView[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0] <<n ViewGroup[childCount=3][checked=false] -2 ViewGroup >n [text="广告"][visibleToUser=true]',
@@ -678,7 +678,7 @@
           ],
         },
         {
-          key: 1001040,
+          key: 1001041,
           name: '快手SDK-类型4',
           matches: 'ImageView[childCount=0][text=null] < @ViewGroup[childCount=1][clickable=true][visibleToUser=true] <<(1, 3) ViewGroup +(1, 2, 4) ViewGroup[childCount=2] >(1,3) [text="广告"][visibleToUser=true]',
           snapshotUrls: [
@@ -689,22 +689,22 @@
           ],
         },
         {
-          key: 1001041,
+          key: 1001042,
           name: '字节SDK-类型1',
           matches: '[id~="(?is).*tt_reward_full_count_down_after_close"][name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0]',
         },
         {
-          key: 1001042,
+          key: 1001043,
           name: '字节SDK-类型2',
           matches: '[vid~="(?is).*ad_flag_source_layout"] + [vid~="(?is).*iv_close"][name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0]',
         },
         {
-          key: 1001043,
+          key: 1001044,
           name: '美数SDK-类型1',
           matches: '[vid~="(?is).*ms_activity_sdk_interstitial_cacel"][name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0]',
         },
         {
-          key: 1001044,
+          key: 1001045,
           name: '腾讯广告-类型1',
           matches: 'ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < @FrameLayout[index=1||index=2][text=null][desc=null][id=null] <<n FrameLayout > [name$="FrameLayout"||name$="ImageView"][index=parent.childCount.minus(1)] -(1, 2) FrameLayout[childCount>=2] >(2, 3) [text^="立即" || text$="详情" || text^="了解" || text="去逛逛" || text="去微信看看" || text$="应用" || text="进入小程序" || text="领取优惠" || text="跳转微信"]',
           snapshotUrls: [
@@ -741,7 +741,7 @@
           ],
         },
         {
-          key: 1001045,
+          key: 1001046,
           name: '快手SDK-类型5',
           fastQuery: true,
           matches: [
@@ -753,7 +753,7 @@
           ],
         },
         {
-          key: 1001046,
+          key: 1001047,
           name: '腾讯广告-补充',
           fastQuery: true,
           anyMatches: [
@@ -767,7 +767,7 @@
           ],
         },
         {
-          key: 1001047,
+          key: 1001048,
           name: '京东广告',
           fastQuery: true,
           anyMatches: [
@@ -780,7 +780,7 @@
           ],
         },
         {
-          key: 1001048,
+          key: 1001049,
           name: '字节SDK-反馈',
           anyMatches: [
             '@Image[childCount=0][text=""][width<60 && height<60] < View[childCount=1] + View +n View > View[childCount=1] > TextView[text$="广告"]',
@@ -837,62 +837,62 @@
       matchTime: 10000,
       forcedTime: 10000,
       resetMatch: 'activity',
-      actionCdKey: 1001049,
+      actionCdKey: 1001050,
       rules: [
         {
-          key: 1001049,
+          key: 1001050,
           matches: '[(((vid~="(?is)ad.*"||vid~="(?is).*ad")&&vid*="_")||vid~="adIv"||vid~="(?is).*_ad_.*")&&(!(vid~="(?is).*load.*"))&&(!(vid~="(?is).*read.*"))&&(!(vid~="(?is).*add.*"))&&!(vid~="(?is).*ead.*")][height>0&&width>0] <<n * <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(vid~="(?is).*dismiss.*"||vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*"||vid~="(?is).*update.*")&&(vid~="(?is).*close.*"||vid~="(?is).*delete.*"||vid~="(?is).*cancel.*"||vid~="(?is).*cancle.*"||vid~="(?is).*exit.*")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||vid="iv_cancel"||vid="ivCancel"||vid="tvCancel"||vid="cancel"||vid="Cancel"||vid="iv_negative"||vid="update_close_icon"||text=""||desc=""||text="×"||desc="×"||text="✕"||desc="✕"||text="퀺"||desc="퀺"||text=""||desc=""||text=""||desc=""||text=""||desc=""]',
         },
         {
-          key: 1001050,
+          key: 1001051,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text~="(?is).*AD"||text~="ad")&&((!(text~="(?is).*load.*"))&&(!(text~="(?is).*read.*"))&&(!(text~="(?is).*add.*"))&&!(text~="(?is).*ead.*")))||(text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")] <n * > [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text^="不"||text^="现在不要")&&text$="谢谢")||text$="不感兴趣"||text="与我无关"||text="关闭此广告"||text="关闭该广告"||text="關閉此廣告"||text="没兴趣"||text="否"||text="关闭"||text~="跳[\\\\s]+过"||text~="跳[\\\\s]+過"||text="关闭按钮"||text="我没空"||text="不开启"||text="暂时不用"||text="暂时不要"||text="我已知晓"||text="不用了"||text="本次忽略"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||(text^="稍后"&&text!="稍后再看")||text^="忽略"||text^="暂不"||text^="放弃"||text^="放棄"||text^="取消"||text^="关闭"||text$="再说"||text$="拒绝"||text$="再想想"||text*="再看看"||text$="不要"||text$="知道了"||text$="稍后提醒我"||text$="稍後提醒我"||((text^="不"||text^="現在不要")&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="我已知曉"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text~="(?is)close.*"||text~="(?is)not now.*"||text~="(?is)Ignore.*"||text~="(?is)cancel.*"||text~="(?is).*later"||text~="(?is).*refuse"||text~="(?is).*i see")&&(text!*="取消全部")&&(text!*="取消订单")&&text.length<=7]',
         },
         {
-          key: 1001051,
+          key: 1001052,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text~="(?is).*AD"||text~="ad")&&((!(text~="(?is).*load.*"))&&(!(text~="(?is).*read.*"))&&(!(text~="(?is).*add.*"))&&!(text~="(?is).*ead.*")))||(text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")] <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text^="不"||text^="现在不要")&&text$="谢谢")||text$="不感兴趣"||text="与我无关"||text="关闭此广告"||text="关闭该广告"||text="關閉此廣告"||text="没兴趣"||text="否"||text="关闭"||text~="跳[\\\\s]+过"||text~="跳[\\\\s]+過"||text="关闭按钮"||text="我没空"||text="不开启"||text="暂时不用"||text="暂时不要"||text="我已知晓"||text="不用了"||text="本次忽略"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||(text^="稍后"&&text!="稍后再看")||text^="忽略"||text^="暂不"||text^="放弃"||text^="放棄"||text^="取消"||text^="关闭"||text$="再说"||text$="拒绝"||text$="再想想"||text*="再看看"||text$="不要"||text$="知道了"||text$="稍后提醒我"||text$="稍後提醒我"||((text^="不"||text^="現在不要")&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="我已知曉"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text~="(?is)close.*"||text~="(?is)not now.*"||text~="(?is)Ignore.*"||text~="(?is)cancel.*"||text~="(?is).*later"||text~="(?is).*refuse"||text~="(?is).*i see")&&(text!*="取消全部")&&(text!*="取消订单")&&text.length<=7]',
         },
         {
-          key: 1001052,
+          key: 1001053,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text~="(?is).*AD"||text~="ad")&&((!(text~="(?is).*load.*"))&&(!(text~="(?is).*read.*"))&&(!(text~="(?is).*add.*"))&&!(text~="(?is).*ead.*")))||(text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")] <<n * <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text^="不"||text^="现在不要")&&text$="谢谢")||text$="不感兴趣"||text="与我无关"||text="关闭此广告"||text="关闭该广告"||text="關閉此廣告"||text="没兴趣"||text="否"||text="关闭"||text~="跳[\\\\s]+过"||text~="跳[\\\\s]+過"||text="关闭按钮"||text="我没空"||text="不开启"||text="暂时不用"||text="暂时不要"||text="我已知晓"||text="不用了"||text="本次忽略"||text="考虑一下"||text="考慮一下"||text="先不了"||text="不允许"||text^="不了"||text^="不再"||(text^="稍后"&&text!="稍后再看")||text^="忽略"||text^="暂不"||text^="放弃"||text^="放棄"||text^="取消"||text^="关闭"||text$="再说"||text$="拒绝"||text$="再想想"||text*="再看看"||text$="不要"||text$="知道了"||text$="稍后提醒我"||text$="稍後提醒我"||((text^="不"||text^="現在不要")&&text$="謝謝")||text="關閉"||text="關閉按鈕"||text="我已知曉"||text="不開啟"||text$="再說"||text$="拒絕"||text^="暫不"||text~="(?is)close.*"||text~="(?is)not now.*"||text~="(?is)Ignore.*"||text~="(?is)cancel.*"||text~="(?is).*later"||text~="(?is).*refuse"||text~="(?is).*i see")&&(text!*="取消全部")&&(text!*="取消订单")&&text.length<=7]',
         },
         {
-          key: 1001053,
+          key: 1001054,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((!(desc~="(?is).*load.*"))&&(!(desc~="(?is).*read.*"))&&(!(desc~="(?is).*add.*"))&&!(desc~="(?is).*ead.*")))||(desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")] <n * > [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc^="不"||desc^="现在不要")&&desc$="谢谢")||desc$="不感兴趣"||desc="与我无关"||desc="关闭此广告"||desc="关闭该广告"||desc="關閉此廣告"||desc="没兴趣"||desc="否"||desc="关闭"||desc~="跳[\\\\s]+过"||desc~="跳[\\\\s]+過"||desc="关闭按钮"||desc="我没空"||desc="不开启"||desc="暂时不用"||desc="暂时不要"||desc="我已知晓"||desc="不用了"||desc="本次忽略"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||(desc^="稍后"&&desc!="稍后再看")||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="放棄"||desc^="取消"||desc^="关闭"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc*="再看看"||desc$="不要"||desc$="知道了"||desc$="稍后提醒我"||desc$="稍後提醒我"||((desc^="不"||desc^="現在不要")&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="我已知曉"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc~="(?is)close.*"||desc~="(?is)not now.*"||desc~="(?is)Ignore.*"||desc~="(?is)cancel.*"||desc~="(?is).*later"||desc~="(?is).*refuse"||desc~="(?is).*i see")&&(desc!*="取消全部")&&(desc!*="取消订单")&&desc.length<=7]',
         },
         {
-          key: 1001054,
+          key: 1001055,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((!(desc~="(?is).*load.*"))&&(!(desc~="(?is).*read.*"))&&(!(desc~="(?is).*add.*"))&&!(desc~="(?is).*ead.*")))||(desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")] <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc^="不"||desc^="现在不要")&&desc$="谢谢")||desc$="不感兴趣"||desc="与我无关"||desc="关闭此广告"||desc="关闭该广告"||desc="關閉此廣告"||desc="没兴趣"||desc="否"||desc="关闭"||desc~="跳[\\\\s]+过"||desc~="跳[\\\\s]+過"||desc="关闭按钮"||desc="我没空"||desc="不开启"||desc="暂时不用"||desc="暂时不要"||desc="我已知晓"||desc="不用了"||desc="本次忽略"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||(desc^="稍后"&&desc!="稍后再看")||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="放棄"||desc^="取消"||desc^="关闭"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc*="再看看"||desc$="不要"||desc$="知道了"||desc$="稍后提醒我"||desc$="稍後提醒我"||((desc^="不"||desc^="現在不要")&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="我已知曉"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc~="(?is)close.*"||desc~="(?is)not now.*"||desc~="(?is)Ignore.*"||desc~="(?is)cancel.*"||desc~="(?is).*later"||desc~="(?is).*refuse"||desc~="(?is).*i see")&&(desc!*="取消全部")&&(desc!*="取消订单")&&desc.length<=7]',
         },
         {
-          key: 1001055,
+          key: 1001056,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((!(desc~="(?is).*load.*"))&&(!(desc~="(?is).*read.*"))&&(!(desc~="(?is).*add.*"))&&!(desc~="(?is).*ead.*")))||(desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")] <<n * <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc^="不"||desc^="现在不要")&&desc$="谢谢")||desc$="不感兴趣"||desc="与我无关"||desc="关闭此广告"||desc="关闭该广告"||desc="關閉此廣告"||desc="没兴趣"||desc="否"||desc="关闭"||desc~="跳[\\\\s]+过"||desc~="跳[\\\\s]+過"||desc="关闭按钮"||desc="我没空"||desc="不开启"||desc="暂时不用"||desc="暂时不要"||desc="我已知晓"||desc="不用了"||desc="本次忽略"||desc="考虑一下"||desc="考慮一下"||desc="先不了"||desc="不允许"||desc^="不了"||desc^="不再"||(desc^="稍后"&&desc!="稍后再看")||desc^="忽略"||desc^="暂不"||desc^="放弃"||desc^="放棄"||desc^="取消"||desc^="关闭"||desc$="再说"||desc$="拒绝"||desc$="再想想"||desc*="再看看"||desc$="不要"||desc$="知道了"||desc$="稍后提醒我"||desc$="稍後提醒我"||((desc^="不"||desc^="現在不要")&&desc$="謝謝")||desc="關閉"||desc="關閉按鈕"||desc="我已知曉"||desc="不開啟"||desc$="再說"||desc$="拒絕"||desc^="暫不"||desc~="(?is)close.*"||desc~="(?is)not now.*"||desc~="(?is)Ignore.*"||desc~="(?is)cancel.*"||desc~="(?is).*later"||desc~="(?is).*refuse"||desc~="(?is).*i see")&&(desc!*="取消全部")&&(desc!*="取消订单")&&desc.length<=7]',
         },
         {
-          key: 1001056,
+          key: 1001057,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text~="(?is).*AD"||text~="ad")&&((!(text~="(?is).*load.*"))&&(!(text~="(?is).*read.*"))&&(!(text~="(?is).*add.*"))&&!(text~="(?is).*ead.*")))||(text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")] <n * > [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(vid~="(?is).*dismiss.*"||vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*"||vid~="(?is).*update.*")&&(vid~="(?is).*close.*"||vid~="(?is).*delete.*"||vid~="(?is).*cancel.*"||vid~="(?is).*cancle.*"||vid~="(?is).*exit.*")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||vid="iv_cancel"||vid="ivCancel"||vid="tvCancel"||vid="cancel"||vid="Cancel"||vid="iv_negative"||vid="update_close_icon"||text=""||desc=""||text="×"||desc="×"||text="✕"||desc="✕"||text="퀺"||desc="퀺"||text=""||desc=""||text=""||desc=""||text=""||desc=""]',
         },
         {
-          key: 1001057,
+          key: 1001058,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text~="(?is).*AD"||text~="ad")&&((!(text~="(?is).*load.*"))&&(!(text~="(?is).*read.*"))&&(!(text~="(?is).*add.*"))&&!(text~="(?is).*ead.*")))||(text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")] <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(vid~="(?is).*dismiss.*"||vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*"||vid~="(?is).*update.*")&&(vid~="(?is).*close.*"||vid~="(?is).*delete.*"||vid~="(?is).*cancel.*"||vid~="(?is).*cancle.*"||vid~="(?is).*exit.*")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||vid="iv_cancel"||vid="ivCancel"||vid="tvCancel"||vid="cancel"||vid="Cancel"||vid="iv_negative"||vid="update_close_icon"||text=""||desc=""||text="×"||desc="×"||text="✕"||desc="✕"||text="퀺"||desc="퀺"||text=""||desc=""||text=""||desc=""||text=""||desc=""]',
         },
         {
-          key: 1001058,
+          key: 1001059,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][text^="广告"||text$="广告"||text^="廣告"||text$="廣告"||text$="限时福利"||text^="热门活动"||text$="热门活动"||text$="限時福利"||text^="限时福利"||text^="限時福利"||((text~="(?is).*AD"||text~="ad")&&((!(text~="(?is).*load.*"))&&(!(text~="(?is).*read.*"))&&(!(text~="(?is).*add.*"))&&!(text~="(?is).*ead.*")))||(text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*")&&(text*="个性化"||text*="推荐"||text*="感兴趣"||text*="個性化"||text*="推薦"||text*="感興趣"||text*="感興趣")] <<n * <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(vid~="(?is).*dismiss.*"||vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*"||vid~="(?is).*update.*")&&(vid~="(?is).*close.*"||vid~="(?is).*delete.*"||vid~="(?is).*cancel.*"||vid~="(?is).*cancle.*"||vid~="(?is).*exit.*")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||vid="iv_cancel"||vid="ivCancel"||vid="tvCancel"||vid="cancel"||vid="Cancel"||vid="iv_negative"||vid="update_close_icon"||text=""||desc=""||text="×"||desc="×"||text="✕"||desc="✕"||text="퀺"||desc="퀺"||text=""||desc=""||text=""||desc=""||text=""||desc=""]',
         },
         {
-          key: 1001059,
+          key: 1001060,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((!(desc~="(?is).*load.*"))&&(!(desc~="(?is).*read.*"))&&(!(desc~="(?is).*add.*"))&&!(desc~="(?is).*ead.*")))||(desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")] <n * > [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(vid~="(?is).*dismiss.*"||vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*"||vid~="(?is).*update.*")&&(vid~="(?is).*close.*"||vid~="(?is).*delete.*"||vid~="(?is).*cancel.*"||vid~="(?is).*cancle.*"||vid~="(?is).*exit.*")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||vid="iv_cancel"||vid="ivCancel"||vid="tvCancel"||vid="cancel"||vid="Cancel"||vid="iv_negative"||vid="update_close_icon"||text=""||desc=""||text="×"||desc="×"||text="✕"||desc="✕"||text="퀺"||desc="퀺"||text=""||desc=""||text=""||desc=""||text=""||desc=""]',
         },
         {
-          key: 1001060,
+          key: 1001061,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((!(desc~="(?is).*load.*"))&&(!(desc~="(?is).*read.*"))&&(!(desc~="(?is).*add.*"))&&!(desc~="(?is).*ead.*")))||(desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")] <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(vid~="(?is).*dismiss.*"||vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*"||vid~="(?is).*update.*")&&(vid~="(?is).*close.*"||vid~="(?is).*delete.*"||vid~="(?is).*cancel.*"||vid~="(?is).*cancle.*"||vid~="(?is).*exit.*")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||vid="iv_cancel"||vid="ivCancel"||vid="tvCancel"||vid="cancel"||vid="Cancel"||vid="iv_negative"||vid="update_close_icon"||text=""||desc=""||text="×"||desc="×"||text="✕"||desc="✕"||text="퀺"||desc="퀺"||text=""||desc=""||text=""||desc=""||text=""||desc=""]',
         },
         {
-          key: 1001061,
+          key: 1001062,
           matches: '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][desc^="广告"||desc$="广告"||desc^="廣告"||desc$="廣告"||desc$="限时福利"||desc^="热门活动"||desc$="热门活动"||desc$="限時福利"||desc^="限时福利"||desc^="限時福利"||((desc~="(?is).*AD"||desc~="ad")&&((!(desc~="(?is).*load.*"))&&(!(desc~="(?is).*read.*"))&&(!(desc~="(?is).*add.*"))&&!(desc~="(?is).*ead.*")))||(desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*")&&(desc*="个性化"||desc*="推荐"||desc*="感兴趣"||desc*="個性化"||desc*="推薦"||desc*="感興趣"||desc*="感興趣")] <<n * <n * > * >n [name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(vid~="(?is).*dismiss.*"||vid~="(?is).*iv.*"||vid~="(?is).*guide.*"||vid~="(?is).*alert"||vid~="(?is).*notific.*"||vid~="(?is).*dialog.*"||vid~="(?is).*btn.*"||vid~="(?is).*ad.*"||vid~="(?is).*ab.*"||vid~="(?is).*update.*")&&(vid~="(?is).*close.*"||vid~="(?is).*delete.*"||vid~="(?is).*cancel.*"||vid~="(?is).*cancle.*"||vid~="(?is).*exit.*")||vid~="(?is)close.*"||vid~="(?is)ab.*"||vid~="(?is)closeIv.*"||vid~="(?is)ivDelete.*"||vid~="(?is)deleteIv.*"||vid~="(?is)iv_close_bt.*"||vid~="(?is).*_close"||vid="iv_cancel"||vid="ivCancel"||vid="tvCancel"||vid="cancel"||vid="Cancel"||vid="iv_negative"||vid="update_close_icon"||text=""||desc=""||text="×"||desc="×"||text="✕"||desc="✕"||text="퀺"||desc="퀺"||text=""||desc=""||text=""||desc=""||text=""||desc=""]',
         },
         {
-          key: 1001062,
+          key: 1001063,
           name: '卡片广告-类型1',
           fastQuery: true,
           matches: '@ImageView[childCount=0][visibleToUser=true] < FrameLayout[childCount=1] - LinearLayout[childCount=2] > [text="下载应用" || text="立即下载" || text="查看详情" || text="领取优惠" || text="进入小程序" || text="了解更多"][visibleToUser=true]',
@@ -904,7 +904,7 @@
           ],
         },
         {
-          key: 1001063,
+          key: 1001064,
           name: '卡片广告-类型2',
           fastQuery: true,
           matches: '@View[clickable=true][childCount=0][visibleToUser=true] < FrameLayout[desc^="dislike"] + FrameLayout >2 [text="广告"]',
@@ -960,11 +960,11 @@
       matchTime: 10000,
       forcedTime: 10000,
       resetMatch: 'activity',
-      actionCdKey: 1001064,
-      actionMaximumKey: 1001064,
+      actionCdKey: 1001065,
+      actionMaximumKey: 1001065,
       rules: [
         {
-          key: 1001064,
+          key: 1001065,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][((text*="给"||text*="赏"||text*="来个"||text*="一下"||text*="app"||text*="喜欢"||text*="诚邀"||text*="前进的动力")&&(text*="好评"||text*="评分"||text*="评价"||text*="鼓励"||text*="Rate"||text*="吗？"||text*="调研"))&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))||name$=".RatingBar"]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text*="吐槽"||text*="好评"||text*="鼓励一下"||text*="评价"||text*="评分"||text*="提意见")||(text="确定"||text="提交"||text="满意"||text="马上参加"||text~="RATE NOW"||text~="(?is).*Love it.*"))&&text.length<9)||vid~="(?is).*star.*"]',
@@ -972,7 +972,7 @@
           ],
         },
         {
-          key: 1001065,
+          key: 1001066,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][((desc*="给"||desc*="赏"||desc*="来个"||desc*="一下"||desc*="app"||desc*="喜欢"||desc*="诚邀"||desc*="前进的动力")&&(desc*="好评"||desc*="评分"||desc*="评价"||desc*="鼓励"||desc*="Rate"||desc*="吗？"||desc*="调研"))&&(desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))||name$=".RatingBar"]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc*="吐槽"||desc*="好评"||desc*="鼓励一下"||desc*="评价"||desc*="评分"||desc*="提意见")||(desc="确定"||desc="提交"||desc="满意"||desc="马上参加"||desc~="RATE NOW"||desc~="(?is).*Love it.*"))&&desc.length<9)||vid~="(?is).*star.*"]',
@@ -980,7 +980,7 @@
           ],
         },
         {
-          key: 1001066,
+          key: 1001067,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][((text*="给"||text*="赏"||text*="来个"||text*="一下"||text*="app"||text*="喜欢"||text*="诚邀"||text*="前进的动力")&&(text*="好评"||text*="评分"||text*="评价"||text*="鼓励"||text*="Rate"||text*="吗？"||text*="调研"))&&(text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))||name$=".RatingBar"]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text*="吐槽"||text*="好评"||text*="鼓励一下"||text*="评价"||text*="评分"||text*="提意见")||(text="确定"||text="提交"||text="满意"||text="马上参加"||text~="RATE NOW"||text~="(?is).*Love it.*"))&&text.length<9)||vid~="(?is).*star.*"]',
@@ -988,7 +988,7 @@
           ],
         },
         {
-          key: 1001067,
+          key: 1001068,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][((desc*="给"||desc*="赏"||desc*="来个"||desc*="一下"||desc*="app"||desc*="喜欢"||desc*="诚邀"||desc*="前进的动力")&&(desc*="好评"||desc*="评分"||desc*="评价"||desc*="鼓励"||desc*="Rate"||desc*="吗？"||desc*="调研"))&&(desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))||name$=".RatingBar"]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc*="吐槽"||desc*="好评"||desc*="鼓励一下"||desc*="评价"||desc*="评分"||desc*="提意见")||(desc="确定"||desc="提交"||desc="满意"||desc="马上参加"||desc~="RATE NOW"||desc~="(?is).*Love it.*"))&&desc.length<9)||vid~="(?is).*star.*"]',
@@ -1041,10 +1041,10 @@
       matchTime: 10000,
       forcedTime: 10000,
       resetMatch: 'activity',
-      actionCdKey: 1001068,
+      actionCdKey: 1001069,
       rules: [
         {
-          key: 1001068,
+          key: 1001069,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(text*="将使用"||text*="可能错过"||text*="是否允许"||text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="获得"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*"||text~="(?is).*Enable.*")&&(text*="通知"||text*="推送"||text*="消息"||text~="(?is).*notification.*")&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&(text!*="权限"||text*="通知权限"||text*="通知栏权限")&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text*="打开"||text*="開啟"||text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="允许")&&(text*="通知"||text*="推送"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text*="啟用"||text="開啟"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<10]',
@@ -1052,7 +1052,7 @@
           ],
         },
         {
-          key: 1001069,
+          key: 1001070,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(desc*="将使用"||desc*="可能错过"||desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="获得"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*"||desc~="(?is).*Enable.*")&&(desc*="通知"||desc*="推送"||desc*="消息"||desc~="(?is).*notification.*")&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&(desc!*="权限"||desc*="通知权限"||desc*="通知栏权限")&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="允许")&&(desc*="通知"||desc*="推送"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<10]',
@@ -1060,7 +1060,7 @@
           ],
         },
         {
-          key: 1001070,
+          key: 1001071,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(text*="将使用"||text*="可能错过"||text*="是否允许"||text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="获得"||text*="订阅"||text*="接收"||text~="(?is).*Turn on.*"||text~="(?is).*Enable.*")&&(text*="通知"||text*="推送"||text*="消息"||text~="(?is).*notification.*")&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&(text!*="权限"||text*="通知权限"||text*="通知栏权限")&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text*="打开"||text*="開啟"||text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="允许")&&(text*="通知"||text*="推送"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<10]',
@@ -1068,7 +1068,7 @@
           ],
         },
         {
-          key: 1001071,
+          key: 1001072,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(desc*="将使用"||desc*="可能错过"||desc*="是否允许"||desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="获得"||desc*="订阅"||desc*="接收"||desc~="(?is).*Turn on.*"||desc~="(?is).*Enable.*")&&(desc*="通知"||desc*="推送"||desc*="消息"||desc~="(?is).*notification.*")&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&(desc!*="权限"||desc*="通知权限"||desc*="通知栏权限")&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="允许")&&(desc*="通知"||desc*="推送"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<10]',
@@ -1121,10 +1121,10 @@
       matchTime: 10000,
       forcedTime: 10000,
       resetMatch: 'activity',
-      actionCdKey: 1001072,
+      actionCdKey: 1001073,
       rules: [
         {
-          key: 1001072,
+          key: 1001073,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(text*="将使用"||text*="是否允许"||text*="申请"||text*="需要"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="授权"||text*="Allow")&&(text*="权限"||text~="(?is).*Permissions.*"||((text*="剪切板"||text*="剪贴板"||text*="粘贴")&&(text*="内容"||text*="信息"))||(text*="通讯录")||(text*="蓝牙")||(text*="悬浮窗"))&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text*="打开"||text*="開啟"||text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="允许")&&(text*="定位"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text="发现好友"||text~="Authorize"||text~="Let’s go")&&text.length<6]',
@@ -1132,7 +1132,7 @@
           ],
         },
         {
-          key: 1001073,
+          key: 1001074,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(desc*="将使用"||desc*="是否允许"||desc*="申请"||desc*="需要"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="授权"||desc*="Allow")&&(desc*="权限"||desc~="(?is).*Permissions.*"||((desc*="剪切板"||desc*="剪贴板"||desc*="粘贴")&&(desc*="内容"||desc*="信息"))||(desc*="通讯录")||(desc*="蓝牙")||(desc*="悬浮窗"))&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="允许")&&(desc*="定位"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc="发现好友"||desc~="Authorize"||desc~="Let’s go")&&desc.length<6]',
@@ -1140,7 +1140,7 @@
           ],
         },
         {
-          key: 1001074,
+          key: 1001075,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(text*="将使用"||text*="是否允许"||text*="申请"||text*="需要"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="授权"||text*="Allow")&&(text*="权限"||text~="(?is).*Permissions.*"||((text*="剪切板"||text*="剪贴板"||text*="粘贴")&&(text*="内容"||text*="信息"))||(text*="通讯录")||(text*="蓝牙")||(text*="悬浮窗"))&&(text!*="定位"&&text!*="位置"&&!(text~="(?is).*location.*")&&text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text*="打开"||text*="開啟"||text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="允许")&&(text*="定位"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text="发现好友"||text~="Authorize"||text~="Let’s go")&&text.length<6]',
@@ -1148,7 +1148,7 @@
           ],
         },
         {
-          key: 1001075,
+          key: 1001076,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(desc*="将使用"||desc*="是否允许"||desc*="申请"||desc*="需要"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="授权"||desc*="Allow")&&(desc*="权限"||desc~="(?is).*Permissions.*"||((desc*="剪切板"||desc*="剪贴板"||desc*="粘贴")&&(desc*="内容"||desc*="信息"))||(desc*="通讯录")||(desc*="蓝牙")||(desc*="悬浮窗"))&&(desc!*="定位"&&desc!*="位置"&&!(desc~="(?is).*location.*")&&desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="允许")&&(desc*="定位"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc="发现好友"||desc~="Authorize"||desc~="Let’s go")&&desc.length<6]',
@@ -1201,10 +1201,10 @@
       matchTime: 10000,
       forcedTime: 10000,
       resetMatch: 'activity',
-      actionCdKey: 1001076,
+      actionCdKey: 1001077,
       rules: [
         {
-          key: 1001076,
+          key: 1001077,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(text*="将使用"||text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="请求")&&(text*="定位"||text*="位置"||text~="(?is).*location.*")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text*="打开"||text*="開啟"||text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="允许")&&(text*="定位"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<6]',
@@ -1212,7 +1212,7 @@
           ],
         },
         {
-          key: 1001077,
+          key: 1001078,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(desc*="将使用"||desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="请求")&&(desc*="定位"||desc*="位置"||desc~="(?is).*location.*")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="允许")&&(desc*="定位"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<6]',
@@ -1220,7 +1220,7 @@
           ],
         },
         {
-          key: 1001078,
+          key: 1001079,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(text*="将使用"||text*="是否允许"||text*="访问"||text*="申请"||text*="开启"||text*="啟用"||text="開啟"||text*="打开"||text*="获取"||text*="请求")&&(text*="定位"||text*="位置"||text~="(?is).*location.*")&&(text!*="通知"&&text!*="成功"&&text!*="失败"&&(text!*="已"||text*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((text*="打开"||text*="開啟"||text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="允许")&&(text*="定位"))||text="是"||text="好"||text="启用"||text="确认"||text="确定"||text="同意"||text="开启"||text="设置"||text="允许"||text="好的"||((text*="去"||text*="立即"||text*="立刻"||text*="马上"||text*="前往"||text*="现在")&&(text*="开启"||text*="啟用"||text="開啟"||text*="设置"||text*="授权"))||text="尝试一下"||text="开启设置"||text="立即打开"||text~="Authorize"||text~="Let’s go")&&text.length<6]',
@@ -1228,7 +1228,7 @@
           ],
         },
         {
-          key: 1001079,
+          key: 1001080,
           matches: [
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(desc*="将使用"||desc*="是否允许"||desc*="访问"||desc*="申请"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="打开"||desc*="获取"||desc*="请求")&&(desc*="定位"||desc*="位置"||desc~="(?is).*location.*")&&(desc!*="通知"&&desc!*="成功"&&desc!*="失败"&&(desc!*="已"||desc*="已知"))]',
             '[name!$=".CheckBox"][name!$=".EditText"][name!$=".ProgressBar"][childCount=0][visibleToUser=true][height>0&&width>0&&width<500&&height<300][top>0&&left>0][(((desc*="打开"||desc*="開啟"||desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="允许")&&(desc*="定位"))||desc="是"||desc="好"||desc="启用"||desc="确认"||desc="确定"||desc="同意"||desc="开启"||desc="设置"||desc="允许"||desc="好的"||((desc*="去"||desc*="立即"||desc*="立刻"||desc*="马上"||desc*="前往"||desc*="现在")&&(desc*="开启"||desc*="啟用"||desc="開啟"||desc*="设置"||desc*="授权"))||desc="尝试一下"||desc="开启设置"||desc="立即打开"||desc~="Authorize"||desc~="Let’s go")&&desc.length<6]',
@@ -4298,12 +4298,14 @@
               activityIds: [
                 '.tblauncher.MainTabActivity',
                 'com.baidu.tbadk.browser.TBWebContainerActivity',
+                '.forum.ForumActivity',
               ],
               matches: 'WebView[text!=null] > View[childCount=1] > View[childCount=3] > @[visibleToUser=true][index=2][width<150]',
               exampleUrls: 'https://e.gkd.li/ac3d88b7-31a2-441f-a4c8-8a73eaec24b9',
               snapshotUrls: [
                 'https://i.gkd.li/i/13060891',
                 'https://i.gkd.li/i/16703244',
+                'https://i.gkd.li/i/34382812',
               ],
               excludeSnapshotUrls: 'https://i.gkd.li/i/29640529',
             },
@@ -6889,8 +6891,9 @@
               name: '余额宝广告',
               activityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
               excludeActivityIds: 'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$',
-              matches: '@TextView[width<50 && height<50] -n [visibleToUser=true][text="去看看"]',
+              matches: '[childCount=4] > @TextView[width<50 && height<50] -n [visibleToUser=true][text="去看看"]',
               snapshotUrls: 'https://i.gkd.li/i/23054580',
+              excludeSnapshotUrls: 'https://i.gkd.li/i/34356908',
             },
             {
               key: 1000256,
@@ -22205,6 +22208,21 @@
         },
         {
           key: 33,
+          name: '功能类-直播间抽奖弹窗',
+          desc: '自动关闭直播间抽奖(福袋)结果',
+          rules: [
+            {
+              activityIds: 'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3',
+              fastQuery: true,
+              matches: '[text^="中奖名单"][visibleToUser=true] <(6-n) * <3 * - * -> @Image[desc=null][vid=null][text!=null][width<105 && height<104] <2 View[childCount=2] <<(1n-4) [id="app"] < WebView <<(1n-4) [vid="browser"]',
+              snapshotUrls: 'https://i.gkd.li/i/34363614',
+              exampleUrls: 'https://e.gkd.li/6559f724-c2e9-4f29-b13e-474ff78ead5d',
+              key: 1000996,
+            },
+          ],
+        },
+        {
+          key: 34,
           name: '局部广告-动态推荐广告卡片',
           desc: '点击卡片右上角[广告]按钮-点击不感兴趣',
           fastQuery: true,
@@ -22212,7 +22230,7 @@
           activityIds: 'tv.danmaku.bili.MainActivityV2',
           rules: [
             {
-              key: 1000996,
+              key: 1000997,
               matches: '[id=`tv.danmaku.bili:id/ad_goods_mark_big`]',
               snapshotUrls: 'https://i.gkd.li/import/12700222',
             },
@@ -22220,13 +22238,13 @@
               preKeys: 1,
               matches: '[text="不感兴趣"][id^="tv.danmaku.bili:id/reason"]',
               snapshotUrls: 'https://i.gkd.li/import/12700243',
-              key: 1000997,
+              key: 1000998,
             },
           ],
           enable: false,
         },
         {
-          key: 34,
+          key: 35,
           name: '局部广告-视频底部与评论区中间卡片式广告',
           desc: '需点击二次弹窗 屏蔽原因',
           fastQuery: true,
@@ -22237,7 +22255,7 @@
           ],
           rules: [
             {
-              key: 1000998,
+              key: 1000999,
               name: '点击广告卡片右侧菜单图标',
               anyMatches: [
                 '@ImageView < FrameLayout[id="tv.danmaku.bili:id/more" || id="tv.danmaku.bili:id/more_layout"] <n * < FrameLayout[id="tv.danmaku.bili:id/ad_tint_frame"]',
@@ -22254,7 +22272,7 @@
             },
             {
               preKeys: 0,
-              key: 1000999,
+              key: 1001000,
               name: '点击屏蔽广告',
               matches: 'TextView[text="不感兴趣"||text="与视频内容不相关"]',
               snapshotUrls: [
@@ -22266,7 +22284,7 @@
           enable: false,
         },
         {
-          key: 35,
+          key: 36,
           name: '其他-悬浮窗功能',
           desc: '暂不开启',
           fastQuery: true,
@@ -22286,13 +22304,13 @@
                 'https://i.gkd.li/i/19260138',
                 'https://i.gkd.li/i/19402551',
               ],
-              key: 1001000,
+              key: 1001001,
             },
           ],
           enable: false,
         },
         {
-          key: 36,
+          key: 37,
           name: '局部广告-视频悬浮广告',
           desc: '领取大会员月卡,B站免流星卡',
           fastQuery: true,
@@ -22337,7 +22355,7 @@
               '30': 'x',
               '31': '"',
               '32': ']',
-              key: 1001001,
+              key: 1001002,
             },
           ],
           snapshotUrls: [
@@ -22351,7 +22369,7 @@
           enable: false,
         },
         {
-          key: 37,
+          key: 38,
           name: '局部广告-直播间卡片广告',
           desc: '直播间底部售卖卡片-点击右上角x',
           fastQuery: true,
@@ -22400,7 +22418,7 @@
               '37': 'e',
               '38': '"',
               '39': ']',
-              key: 1001002,
+              key: 1001003,
             },
           ],
           snapshotUrls: 'https://i.gkd.li/import/13200549',
@@ -22408,7 +22426,7 @@
         },
         {
           enable: false,
-          key: 38,
+          key: 39,
           name: '权限提示-请求通知权限弹窗',
           fastQuery: true,
           matchTime: 10000,
@@ -22471,7 +22489,7 @@
               '48': 'e',
               '49': '"',
               '50': ']',
-              key: 1001003,
+              key: 1001004,
             },
           ],
           snapshotUrls: [
@@ -22481,20 +22499,20 @@
         },
         {
           enable: false,
-          key: 39,
+          key: 40,
           name: '局部广告-首页-推荐视频卡片广告',
           fastQuery: true,
           activityIds: 'tv.danmaku.bili.MainActivityV2',
           rules: [
             {
-              key: 1001004,
+              key: 1001005,
               name: '点击广告卡片右下角菜单按钮',
               matches: '[id="tv.danmaku.bili:id/ad_tint_frame"] [id="tv.danmaku.bili:id/more"]',
               snapshotUrls: 'https://i.gkd.li/import/13256570',
             },
             {
               preKeys: 0,
-              key: 1001005,
+              key: 1001006,
               name: '点击[不感兴趣]',
               matches: '@RelativeLayout > [text$="不感兴趣"]',
               snapshotUrls: [
@@ -22506,7 +22524,7 @@
           ],
         },
         {
-          key: 40,
+          key: 41,
           name: '通知提示-订阅感兴趣的通知',
           fastQuery: true,
           actionMaximum: 1,
@@ -22519,13 +22537,13 @@
                 'TextView[id="tv.danmaku.bili:id/close"][text="暂不开启"]',
               ],
               snapshotUrls: 'https://i.gkd.li/i/19402549',
-              key: 1001006,
+              key: 1001007,
             },
           ],
           enable: false,
         },
         {
-          key: 41,
+          key: 42,
           name: '青少年模式',
           fastQuery: true,
           matchTime: 10000,
@@ -22581,14 +22599,14 @@
               '45': '了',
               '46': '"',
               '47': ']',
-              key: 1001007,
+              key: 1001008,
             },
           ],
           snapshotUrls: 'https://i.gkd.li/i/13746766',
           enable: false,
         },
         {
-          key: 42,
+          key: 43,
           name: '局部广告-动态推荐卡片广告',
           desc: '点击卡片右上角[广告]按钮-点击不感兴趣',
           fastQuery: true,
@@ -22596,7 +22614,7 @@
           activityIds: 'tv.danmaku.bili.MainActivityV2',
           rules: [
             {
-              key: 1001008,
+              key: 1001009,
               matches: '[id="tv.danmaku.bili:id/ad_goods_mark_big"]',
               snapshotUrls: 'https://i.gkd.li/i/12700222',
             },
@@ -22604,13 +22622,13 @@
               preKeys: 1,
               matches: '[text="不感兴趣"][id^="tv.danmaku.bili:id/reason"]',
               snapshotUrls: 'https://i.gkd.li/i/12700243',
-              key: 1001009,
+              key: 1001010,
             },
           ],
           enable: false,
         },
         {
-          key: 43,
+          key: 44,
           name: '分段广告-视频底部与评论区中间卡片广告',
           desc: '需点击二次弹窗 屏蔽原因',
           fastQuery: true,
@@ -22621,7 +22639,7 @@
           ],
           rules: [
             {
-              key: 1001010,
+              key: 1001011,
               name: '点击卡片广告右侧菜单图标',
               matches: 'FrameLayout[id="tv.danmaku.bili:id/ad_tint_frame"] >n [id^="tv.danmaku.bili:id/more"]',
               snapshotUrls: [
@@ -22633,7 +22651,7 @@
             },
             {
               preKeys: 0,
-              key: 1001011,
+              key: 1001012,
               name: '点击屏蔽广告',
               matches: '[id="tv.danmaku.bili:id/dislike_reasons"] @RelativeLayout > [text*="不感兴趣"]',
               snapshotUrls: [
@@ -22645,12 +22663,12 @@
           enable: false,
         },
         {
-          key: 44,
+          key: 45,
           name: '局部广告-视频播放页中间的广告',
           desc: '点击关闭',
           rules: [
             {
-              key: 1001012,
+              key: 1001013,
               fastQuery: true,
               activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
               matches: 'FrameLayout[vid="more_layout"] > ImageView',
@@ -22658,7 +22676,7 @@
               snapshotUrls: 'https://i.gkd.li/i/34298713',
             },
             {
-              key: 1001013,
+              key: 1001014,
               preKeys: 0,
               fastQuery: true,
               activityIds: 'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
@@ -22669,7 +22687,7 @@
           enable: false,
         },
         {
-          key: 45,
+          key: 46,
           name: '分段广告-动态推荐广告卡片',
           desc: '关闭动态页面的广告卡片',
           enable: false,
@@ -22678,28 +22696,28 @@
           activityIds: 'tv.danmaku.bili.MainActivityV2',
           rules: [
             {
-              key: 1001014,
+              key: 1001015,
               matches: '[vid="ad_goods_mark_big"]',
               snapshotUrls: 'https://i.gkd.li/import/12700222',
             },
             {
               preKeys: [
-                1001014,
+                1001015,
               ],
               matches: '[text="不感兴趣"][id^="tv.danmaku.bili:id/reason"]',
               snapshotUrls: 'https://i.gkd.li/import/12700243',
-              key: 1001015,
+              key: 1001016,
             },
           ],
         },
         {
-          key: 46,
+          key: 47,
           name: '分段广告-视频及搜索卡片广告',
           desc: '关闭视频流和搜索结果中的广告卡片，包括视频底部、评论区中间、详情页下方等位置',
           enable: false,
           rules: [
             {
-              key: 1001016,
+              key: 1001017,
               name: '点击广告卡片右侧菜单图标',
               activityIds: [
                 'tv.danmaku.bili.MainActivityV2',
@@ -22755,9 +22773,9 @@
             },
             {
               preKeys: [
-                1001016,
+                1001017,
               ],
-              key: 1001017,
+              key: 1001018,
               fastQuery: true,
               name: '点击[我不想看]',
               activityIds: [
@@ -22773,10 +22791,10 @@
             },
             {
               preKeys: [
-                1001016,
                 1001017,
+                1001018,
               ],
-              key: 1001018,
+              key: 1001019,
               fastQuery: true,
               name: '点击[不感兴趣]',
               activityIds: [
@@ -22822,9 +22840,9 @@
             },
             {
               preKeys: [
-                1001018,
+                1001019,
               ],
-              key: 1001019,
+              key: 1001020,
               name: '点击关闭',
               fastQuery: true,
               activityIds: [
@@ -22844,7 +22862,7 @@
               ],
             },
             {
-              key: 1001020,
+              key: 1001021,
               name: '搜索结果-点击右下角[菜单]',
               fastQuery: true,
               activityIds: 'com.bilibili.search2.main.BiliMainSearchActivity',
@@ -22856,9 +22874,9 @@
               ],
             },
             {
-              key: 1001021,
+              key: 1001022,
               preKeys: [
-                1001020,
+                1001021,
               ],
               name: '搜索结果-点击[不感兴趣]',
               fastQuery: true,
@@ -22873,7 +22891,7 @@
           ],
         },
         {
-          key: 47,
+          key: 48,
           name: '全屏广告-完善信息弹窗',
           desc: '按[返回键]',
           enable: false,
@@ -22884,18 +22902,18 @@
               activityIds: '.MainActivityV2',
               matches: '[vid="design_bottom_sheet"] >2 [vid="title"][text="完善信息，获取精准推荐"]',
               snapshotUrls: 'https://i.gkd.li/i/31165755',
-              key: 1001022,
+              key: 1001023,
             },
           ],
         },
         {
-          key: 48,
+          key: 49,
           name: '功能类-登录授权',
           desc: '点击确认授权按钮',
           enable: false,
           rules: [
             {
-              key: 1001023,
+              key: 1001024,
               activityIds: '.ui.webview.MWebActivity',
               fastQuery: true,
               matches: [
@@ -22907,7 +22925,7 @@
           ],
         },
         {
-          key: 49,
+          key: 50,
           name: '评论区顶部公告横幅',
           quickFind: true,
           excludeActivityIds: [
@@ -23021,7 +23039,7 @@
               '102': '闭',
               '103': '`',
               '104': ']',
-              key: 1001024,
+              key: 1001025,
             },
           ],
           snapshotUrls: [
@@ -23032,7 +23050,7 @@
         },
         {
           enable: false,
-          key: 50,
+          key: 51,
           name: '视频底部与评论区中间卡片式广告',
           desc: '需点击二次弹窗 屏蔽原因',
           quickFind: true,
@@ -23043,7 +23061,7 @@
           ],
           rules: [
             {
-              key: 1001025,
+              key: 1001026,
               name: '点击广告卡片右侧菜单图标',
               matches: 'FrameLayout[id="tv.danmaku.bili:id/ad_tint_frame"] >n [id^="tv.danmaku.bili:id/more"]',
               snapshotUrls: [
@@ -23055,7 +23073,7 @@
             },
             {
               preKeys: 0,
-              key: 1001026,
+              key: 1001027,
               name: '点击屏蔽广告',
               matches: '[id="tv.danmaku.bili:id/dislike_reasons"] @RelativeLayout > [text*="不感兴趣"]',
               snapshotUrls: [
@@ -23066,7 +23084,7 @@
           ],
         },
         {
-          key: 51,
+          key: 52,
           name: '更新弹窗',
           quickFind: true,
           actionMaximum: 1,
@@ -23078,7 +23096,7 @@
           ],
           rules: [
             {
-              key: 1001027,
+              key: 1001028,
               matches: '[id="tv.danmaku.bili:id/update_btn_cancel"]',
               snapshotUrls: [
                 'https://i.gkd.li/import/12649689',
@@ -23091,7 +23109,7 @@
           enable: false,
         },
         {
-          key: 52,
+          key: 53,
           name: '个性化内容推荐弹窗',
           quickFind: true,
           matchTime: 10000,
@@ -23160,7 +23178,7 @@
               '57': 'n',
               '58': '"',
               '59': ']',
-              key: 1001028,
+              key: 1001029,
             },
           ],
           snapshotUrls: 'https://i.gkd.li/import/13448905',
