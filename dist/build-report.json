@@ -9,8 +9,8 @@
     {
       "name": "Lin-arm/GKD_subscription",
       "ok": true,
-      "upstreamVersion": 626,
-      "kb": 1238
+      "upstreamVersion": 627,
+      "kb": 1239
     },
     {
       "name": "ganlinte/GKD-subscription",
@@ -45,8 +45,8 @@
     {
       "name": "AIsouler/gkd-subscription",
       "ok": true,
-      "upstreamVersion": 121,
-      "kb": 113
+      "upstreamVersion": 122,
+      "kb": 114
     },
     {
       "name": "MengNianxiaoyao/gkd-subscription",
