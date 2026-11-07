@@ -5,7 +5,7 @@
   "description": "GitHub Actions 每日从多个社区订阅源合并去重：保留全部全局规则组 + 白名单 App 的全部专项规则组（筛选策略见 config.mjs 的 groupPolicy）。",
   "supportUri": "https://github.com/hkx521/gkd-custom-subscription",
   "checkUpdateUrl": "https://raw.githubusercontent.com/hkx521/gkd-custom-subscription/main/dist/gkd.version.json5",
-  "version": 1790898002,
+  "version": 1790898003,
   "globalGroups": [
     {
       "key": 0,
@@ -4319,17 +4319,19 @@
           "actionMaximum": 1,
           "activityIds": [
             ".pb.pb.main.PbActivity",
-            ".tblauncher.MainTabActivity"
+            ".tblauncher.MainTabActivity",
+            ".forum.ForumActivity"
           ],
           "rules": [
             {
               "key": 1000123,
               "fastQuery": true,
               "name": "悬浮广告1",
-              "matches": "@ImageView[clickable=true][visibleToUser=true][width<77] - [text=\"广告\"]",
+              "matches": "@[clickable=true][width<108] <2 [width<350][childCount=2] > [text=\"广告\"]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/16622395",
-                "https://i.gkd.li/i/16632851"
+                "https://i.gkd.li/i/16632851",
+                "https://i.gkd.li/i/34523272"
               ],
               "excludeSnapshotUrls": "https://i.gkd.li/i/13327933"
             },
