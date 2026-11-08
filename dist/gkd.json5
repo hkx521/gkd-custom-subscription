@@ -5,7 +5,7 @@
   description: 'GitHub Actions 每日从多个社区订阅源合并去重：保留全部全局规则组 + 白名单 App 的全部专项规则组（筛选策略见 config.mjs 的 groupPolicy）。',
   supportUri: 'https://github.com/hkx521/gkd-custom-subscription',
   checkUpdateUrl: 'https://raw.githubusercontent.com/hkx521/gkd-custom-subscription/main/dist/gkd.version.json5',
-  version: 1790898003,
+  version: 1790898004,
   globalGroups: [
     {
       key: 0,
@@ -12518,7 +12518,7 @@
           rules: [
             {
               fastQuery: true,
-              actionCd: 300,
+              actionCd: 1200,
               actionDelay: 200,
               swipeArg: {
                 start: {
@@ -12560,7 +12560,6 @@
           rules: [
             {
               fastQuery: true,
-              actionCd: 300,
               actionDelay: 200,
               swipeArg: {
                 start: {
@@ -12968,7 +12967,6 @@
           rules: [
             {
               fastQuery: true,
-              actionCd: 300,
               actionDelay: 200,
               swipeArg: {
                 start: {
