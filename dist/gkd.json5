@@ -5,7 +5,7 @@
   description: 'GitHub Actions 每日从多个社区订阅源合并去重：保留全部全局规则组 + 白名单 App 的全部专项规则组（筛选策略见 config.mjs 的 groupPolicy）。',
   supportUri: 'https://github.com/hkx521/gkd-custom-subscription',
   checkUpdateUrl: 'https://raw.githubusercontent.com/hkx521/gkd-custom-subscription/main/dist/gkd.version.json5',
-  version: 1790898005,
+  version: 1790898006,
   globalGroups: [
     {
       key: 0,
@@ -6951,11 +6951,12 @@
             {
               key: 1000259,
               name: '①点击[跳过]',
-              matches: '@View[id=null][text=null][childCount=0][visibleToUser=true] < ViewGroup[id=null][text=null][childCount=1][index=parent.childCount.minus(1)] <(7,8) ViewGroup <2 ViewGroup < ViewGroup < LinearLayout < RelativeLayout <(1,2) [id="android:id/content"]',
+              matches: '@View[id=null][text=null][childCount=0][visibleToUser=true] < ViewGroup[id=null][text=null][childCount=1][index=parent.childCount.minus(1)] <(5+n) ViewGroup <2 ViewGroup < ViewGroup < LinearLayout < RelativeLayout <(1,2) [id="android:id/content"]',
               exampleUrls: 'https://e.gkd.li/a243e31f-f1b5-4689-8d1a-c53250be651e',
               snapshotUrls: [
                 'https://i.gkd.li/i/17141999',
                 'https://i.gkd.li/i/28130319',
+                'https://i.gkd.li/i/34788907',
               ],
             },
             {
@@ -21605,11 +21606,12 @@
                 1000958,
               ],
               key: 1000959,
-              matches: '@FrameLayout[clickable=true] > [text="此类内容过多" || text="相似内容过多"][visibleToUser=true]',
+              matches: '@[clickable=true] > [text$="内容过多" || text="不喜欢此商品" || text^="不想看"][visibleToUser=true]',
               exampleUrls: 'https://e.gkd.li/2aba6082-1047-464e-959c-82ee62e492aa',
               snapshotUrls: [
                 'https://i.gkd.li/i/20718890',
                 'https://i.gkd.li/i/20720187',
+                'https://i.gkd.li/i/34799465',
               ],
             },
           ],
@@ -21662,16 +21664,17 @@
                 '.MainActivityV2',
                 'com.bilibili.vip.web.VipWebActivity',
               ],
-              matches: 'ComposeView > View[childCount=7] > @View[clickable=true][childCount=0] <<n [vid="vip_panel"]',
-              exampleUrls: 'https://m.gkd.li/57941037/a78a7719-b148-4df2-a225-f7a24be0c413',
+              matches: '@View[clickable=true][right>getPrev(1).right.minus(20)] -(1,2) [index=0][text*="套餐"] <<n [vid="vip_panel"][height>500]',
               snapshotUrls: [
                 'https://i.gkd.li/i/15523975',
                 'https://i.gkd.li/i/15814146',
+                'https://i.gkd.li/i/34776793',
               ],
+              excludeSnapshotUrls: 'https://i.gkd.li/i/34777480',
+              exampleUrls: 'https://e.gkd.li/41a7f3ae-c01d-4f1e-a90a-5fefa4606393',
             },
             {
               key: 1000963,
-              fastQuery: true,
               activityIds: 'com.bilibili.vip.web.VipWebActivity',
               matches: '@TextView[width<130 && height<130] - TextView[childCount=0][id="dialog-canvas"] <<n [vid="webview"]',
               snapshotUrls: 'https://i.gkd.li/i/23385023',
