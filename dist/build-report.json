@@ -9,8 +9,8 @@
     {
       "name": "Lin-arm/GKD_subscription",
       "ok": true,
-      "upstreamVersion": 637,
-      "kb": 1248
+      "upstreamVersion": 638,
+      "kb": 1249
     },
     {
       "name": "ganlinte/GKD-subscription",
@@ -2105,7 +2105,7 @@
           },
           {
             "key": 18,
-            "name": "功能类-评论自动翻译"
+            "name": "功能类-自动[翻译]评论"
           },
           {
             "key": 19,
