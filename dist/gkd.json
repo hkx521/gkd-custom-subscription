@@ -5,7 +5,7 @@
   "description": "GitHub Actions 每日从多个社区订阅源合并去重：保留全部全局规则组 + 白名单 App 的全部专项规则组（筛选策略见 config.mjs 的 groupPolicy）。",
   "supportUri": "https://github.com/hkx521/gkd-custom-subscription",
   "checkUpdateUrl": "https://raw.githubusercontent.com/hkx521/gkd-custom-subscription/main/dist/gkd.version.json5",
-  "version": 1790898012,
+  "version": 1790898013,
   "globalGroups": [
     {
       "key": 0,
@@ -17955,15 +17955,20 @@
           "fastQuery": true,
           "matchTime": 10000,
           "actionMaximum": 1,
-          "activityIds": ".ui.activity.HomeActivity",
+          "activityIds": [
+            ".ui.activity.HomeActivity",
+            "com.bbk.launcher2.Launcher",
+            ".ui.activity.MainFrameActivity"
+          ],
           "rules": [
             {
               "key": 1000781,
-              "name": "自动签到",
-              "matches": "@[clickable=true] >2 [text=\"领取今日现金\"][visibleToUser=true]",
+              "name": "①自动签到",
+              "matches": "@[clickable=true] >(1,2) [text=\"领取今日现金\"][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/13201422",
-                "https://i.gkd.li/i/13372677"
+                "https://i.gkd.li/i/13372677",
+                "https://i.gkd.li/i/35172532"
               ]
             },
             {
@@ -17971,8 +17976,8 @@
                 1000781
               ],
               "key": 1000782,
-              "name": "在签到后关闭弹窗",
-              "matches": "@[clickable=true] >2 [text=\"明日继续来领\"][visibleToUser=true]",
+              "name": "②签到后关闭弹窗",
+              "matches": "@[clickable=true] >(1,2) [text=\"明日继续来领\"][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/13205634"
             }
           ]
